@@ -98,4 +98,12 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void onStartServiceClick(View view) {
+
+    }
+
+    public void onStopServiceClick(View view) {
+
+    }
 }
