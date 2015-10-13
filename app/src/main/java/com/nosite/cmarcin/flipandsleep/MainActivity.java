@@ -1,5 +1,6 @@
 package com.nosite.cmarcin.flipandsleep;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -100,10 +102,18 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onStartServiceClick(View view) {
-
+		startFaSService(view);
     }
 
     public void onStopServiceClick(View view) {
-
+		stopFaSService(view);
     }
+
+	public void startFaSService(View view) {
+		startService(new Intent(this, FaSService.class));
+	}
+
+	public void stopFaSService(View view) {
+		stopService(new Intent(this, FaSService.class));
+	}
 }
